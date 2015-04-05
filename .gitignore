@@ -1,0 +1,15 @@
+*.pyc
+*.pyo
+logs
+*!
+.DS_Store
+machine_files/*
+!machine_files/README.txt
+!machine_files/aztec
+!machine_files/judge_dredd
+!machine_files/new_machine_template
+!machine_files/tutorial
+
+
+
+
