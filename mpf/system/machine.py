@@ -184,8 +184,12 @@ class MachineController(object):
 
             for plugin in self.config['Plugins']:
                 self.log.info("Checking Plugin: %s", plugin)
-                i = __import__('mpf.plugins.' + plugin.split('.')[0],
-                               fromlist=[''])
+                try:
+                    i = __import__('mpf.plugins.' + plugin.split('.')[0],
+                                   fromlist=[''])
+                except ImportError as ie:
+                    i = __import__(self.config['MPF']['paths']['plugins'] +
+                                   '.' + plugin.split('.')[0], fromlist=[''])
                 if i.preload_check(self):
                     self.log.info("Plugin: %s passes pre-load check. "
                                   "Loading...", plugin)

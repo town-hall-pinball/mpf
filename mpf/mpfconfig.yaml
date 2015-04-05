@@ -55,6 +55,7 @@ MPF:
             blink: blink.Blink
     paths:
         scriptlets: scriptlets
+        plugins: plugins
         shows: shows
         audits: audits/audits.yaml
         sounds: sounds
